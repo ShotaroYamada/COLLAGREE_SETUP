@@ -204,6 +204,7 @@ $ bundle install --path vendor/bundle
 
 #### 4.2. database.yml をコピー
 設定ファイルはGitで管理されていないので、クローンしただけでは存在しない。が、必要なものなので誰かにもらって /config に置く。
+(または、[ここから取得](./database.yml))
 ```
 (例)
 /Users/HOME/collagree/config/database.yml
