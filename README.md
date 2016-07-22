@@ -213,8 +213,12 @@ $ bundle install --path vendor/bundle
 ```
 
 #### 4.3. データベースを作成
-現時点ではデータベースがないので起動してもエラーになってしまいます。  
-以下のコマンドでCOLLAGREE用のデータベースのテーブルを作成しましょう。  
+現時点ではデータベースがないので起動してもエラーになってしまいます。
+まず、MySQLを起動します。  
+```
+$ mysql.server start
+```
+次に、以下のコマンドでCOLLAGREE用のデータベースのテーブルを作成しましょう。  
 ```
 $ bundle exec rake db:create
 $ bundle exec rake db:migrate
