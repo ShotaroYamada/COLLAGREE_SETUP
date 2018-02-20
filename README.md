@@ -98,7 +98,7 @@ $ brew install redis
 
 <a id="section3"></a>  
 ### 3. ~~GitLabへの登録から、クローンまで~~
-~~COLLAGREE はgit(GitLab) で管理されています。  
+COLLAGREE はgit(GitLab) で管理されています。  
 [https://cl3.itolab.nitech.ac.jp/gitlab/crest/collagree](https://cl3.itolab.nitech.ac.jp/gitlab/crest/collagree
 )  
 そのため、開発を進めるためにはプログラムをGitLab から持ってこないといけません。なので、まず誰かにGitLab に招待してもらいましょう。招待されるとメールが届きます。そのメールにあるリンクからGitLab のWEBページにアクセスし、ssh key を登録しなければいけません。(ssh key は、コンピュータとGitLab間の安全な接続を可能にするものです。)
@@ -133,7 +133,6 @@ $ pbcopy < ~/.ssh/id_rsa.pub
 \< Key \> に先ほどコピーした鍵を貼り付けます。  
 \< Title \> は各自入力してください。  
 \< Add Key \> をクリックして登録完了です。  
-~~
 
 #### 3.3 クローン  
 プログラムを触るためには、GitLabにあるCOLLAGREEのプログラムを自分のパソコンに複製しなければなりません。  
