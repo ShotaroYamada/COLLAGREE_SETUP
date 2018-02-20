@@ -6,7 +6,7 @@ MacでCOLLAGREEを運用するための環境構築手順です。
 0.[Xcode,Homebrew のインストール](#section0)  
 1.[Ruby,Ruby on Rails のインストール](#section1)  
 2.[その他必要なものをインストール](#section2)  
-3.[GitLabへの登録から、クローンまで](#section3)  
+3.[~~GitLabへの登録から、クローンまで~~ Githubからクローン](#section3)  
 4.[ローカルでCOLLAGREEが動作するように設定](#section4)  
 5.[起動方法](#section5)  
 6.[本番サーバでの運用](#section6)  
@@ -99,14 +99,19 @@ $ brew install redis
 <a id="section3"></a>  
 ### ~~3. GitLabへの登録から、クローンまで~~ Githubからクローン
 COLLAGREE はgit(~~GitLab~~Github) で管理されています。  
-~~[https://cl3.itolab.nitech.ac.jp/gitlab/crest/collagree](https://cl3.itolab.nitech.ac.jp/gitlab/crest/collagree
-) ~~
-[https://github.com/akihisasengoku/collagree] (https://github.com/akihisasengoku/collagree)
-そのため、開発を進めるためにはプログラムを~~GitLab~~Github から持ってこないといけません。なので、まず誰かに~~GitLab~~Github に招待してもらいましょう。招待されるとメールが届きます。~~そのメールにあるリンクからGitLab のWEBページにアクセスし、ssh key を登録しなければいけません。(ssh key は、コンピュータとGitLab間の安全な接続を可能にするものです。)~~そのメールにあるリンクからWEBページにアクセスし、クローンを行います。
+~~[https://cl3.itolab.nitech.ac.jp/gitlab/crest/collagree](https://cl3.itolab.nitech.ac.jp/gitlab/crest/collagree)~~
+[https://github.com/akihisasengoku/collagree](https://github.com/akihisasengoku/collagree)
 
-以下は、(アカウントがない場合はアカウント登録をしてから)ssh key を生成し、登録するまでの手順です。
-#### 3.1. 鍵を生成  \([参照](http://qiita.com/shizuma/items/2b2f873a0034839e47ce)\)
-ディレクトリを移動します。  
+そのため、開発を進めるためにはプログラムを~~GitLab~~Github から持ってこないといけません。なので、まず誰かに~~GitLab~~Github に招待してもらいましょう。招待されるとメールが届きます。~~そのメールにあるリンクからGitLab のWEBページにアクセスし、ssh key を登録しなければいけません。(ssh key は、コンピュータとGitLab間の安全な接続を可能にするものです。)~~
+
+そのメールにあるリンクからWEBページにアクセスし、クローンを行います。
+
+~~以下は、(アカウントがない場合はアカウント登録をしてから)ssh key を生成し、登録するまでの手順です。~~
+
+[3.3. クローン](clone) に移動
+
+#### ~~3.1. 鍵を生成~  \([参照](http://qiita.com/shizuma/items/2b2f873a0034839e47ce)\)~~
+ディレクトリを移動します。
 ```
 $ cd ~/.ssh
 ```
@@ -128,15 +133,16 @@ Enter same passphrase again:
 $ pbcopy < ~/.ssh/id_rsa.pub
 ```
 
-#### 3.2. 鍵を登録
+#### ~~3.2. 鍵を登録~~
 ブラウザでGitLab にログインし、ページ左のサイドバーから\< SSH Keys \>をクリックします。  
 ![SSHKey](./image/sshkey.png)  
 \< Key \> に先ほどコピーした鍵を貼り付けます。  
 \< Title \> は各自入力してください。  
 \< Add Key \> をクリックして登録完了です。  
 
+<a id="clone"></a>  
 #### 3.3 クローン  
-プログラムを触るためには、GitLabにあるCOLLAGREEのプログラムを自分のパソコンに複製しなければなりません。  
+プログラムを触るためには、~~GitLab~~GithubにあるCOLLAGREEのプログラムを自分のパソコンに複製しなければなりません。  
 その操作がクローンです。クローンまでは、ターミナルでコマンドを実行してもできますが、非常に便利で無料のGitクライアントGUIがあるのでここではそれをオススメします。
 + [SourceTreeを使ってクローン(オススメ)](#sourcetree)  
 + [ターミナルでクローン](#terminal)  
@@ -156,7 +162,8 @@ SourceTree をインストールし、クローンします。
 
 以下のように入力します。
 + ソースURL   
-[git@cl3.itolab.nitech.ac.jp:crest/collagree.git](git@cl3.itolab.nitech.ac.jp:crest/collagree.git)  
+~~[git@cl3.itolab.nitech.ac.jp:crest/collagree.git](git@cl3.itolab.nitech.ac.jp:crest/collagree.git)~~
+[https://github.com/akihisasengoku/collagree.git](https://github.com/akihisasengoku/collagree.git)
 + 保存先のパス  
 各自好きな場所を入力(例 : /Users/HOME/collagree)
 + 名前   
@@ -175,10 +182,16 @@ SourceTree をインストールし、クローンします。
 $ mkdir collagree
 $ cd collagree
 ```
-移動した後、次のコマンドを実行することでクローンできます。
+~~移動した後、次のコマンドを実行することでクローンできます。~~
 ```
 $ git clone git@cl3.itolab.nitech.ac.jp:crest/collagree.git
 ```
+
+移動した後、次のコマンドを実行することでクローンできます。
+```
+$ git clone https://github.com/akihisasengoku/collagree.git
+```
+
 
 <a id="section4"></a>  
 ### 4.ローカルでCOLLAGREEが動作するように設定
@@ -297,3 +310,5 @@ $ bundle exec rake assets:precompile RAILS_ENV=production
 ## 最後に
 手順通りにいけば、COLLAGREEを運用できるようになります。  
 しかし、以上の環境構築はあくまで1つの例であり、全てのパソコンで手順どおりにいくとは限りません。不明な点は各自調べるなり誰かに聞くなりして下さい。  
+
+また、セットアップ時でつまづいた箇所のエラーコードとその対処法などを随時このREADME.mdに追加していただけると今後のためになります。
