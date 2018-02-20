@@ -97,11 +97,12 @@ $ brew install redis
 ```
 
 <a id="section3"></a>  
-### 3. GitLabへの登録から、クローンまで  
-COLLAGREE はgit(GitLab) で管理されています。  
-[https://cl3.itolab.nitech.ac.jp/gitlab/crest/collagree](https://cl3.itolab.nitech.ac.jp/gitlab/crest/collagree
-)  
-そのため、開発を進めるためにはプログラムをGitLab から持ってこないといけません。なので、まず誰かにGitLab に招待してもらいましょう。招待されるとメールが届きます。そのメールにあるリンクからGitLab のWEBページにアクセスし、ssh key を登録しなければいけません。(ssh key は、コンピュータとGitLab間の安全な接続を可能にするものです。)
+### ~~3. GitLabへの登録から、クローンまで~~ Githubからクローン
+COLLAGREE はgit(~~GitLab~~Github) で管理されています。  
+~~[https://cl3.itolab.nitech.ac.jp/gitlab/crest/collagree](https://cl3.itolab.nitech.ac.jp/gitlab/crest/collagree
+) ~~
+[https://github.com/akihisasengoku/collagree] (https://github.com/akihisasengoku/collagree)
+そのため、開発を進めるためにはプログラムを~~GitLab~~Github から持ってこないといけません。なので、まず誰かに~~GitLab~~Github に招待してもらいましょう。招待されるとメールが届きます。~~そのメールにあるリンクからGitLab のWEBページにアクセスし、ssh key を登録しなければいけません。(ssh key は、コンピュータとGitLab間の安全な接続を可能にするものです。)~~そのメールにあるリンクからWEBページにアクセスし、クローンを行います。
 
 以下は、(アカウントがない場合はアカウント登録をしてから)ssh key を生成し、登録するまでの手順です。
 #### 3.1. 鍵を生成  \([参照](http://qiita.com/shizuma/items/2b2f873a0034839e47ce)\)
